@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Cotar
+{% endblock %}
+
+{% block header %}
+<div class="alert alert-primary alert-dismissible fade show" role="alert" style="text-align: center;">
+    <strong> {{ get_flashed_messages() | join(" ") }}</strong>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+        
+{% endblock %}
+
+{% block div %}
+    <form action="/cotar" method="post">
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="symbol" placeholder="Ação" type="text">
+        </div>
+        <button class="btn btn-primary btn-dark" type="submit">Cotar</button>
+    </form>
+    <div style="margin: 20px;">
+        <a type="button" class="btn btn-outline-info " href="https://www.guiainvest.com.br/lista-acoes/default.aspx?listaacaopage=1" target="_blank">Lista de ações</a>
+    </div>
+{% endblock %}
